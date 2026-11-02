@@ -1,0 +1,179 @@
+{
+  "insurance_None_misread_as_NaN_by_default_pandas": 24715,
+  "tables": [
+    {
+      "table": "admissions",
+      "rows": 120000,
+      "columns": 17,
+      "memory_MB": 73.6
+    },
+    {
+      "table": "patients",
+      "rows": 86400,
+      "columns": 8,
+      "memory_MB": 23.6
+    },
+    {
+      "table": "diagnoses",
+      "rows": 271341,
+      "columns": 6,
+      "memory_MB": 99.5
+    },
+    {
+      "table": "billing",
+      "rows": 120000,
+      "columns": 6,
+      "memory_MB": 29.9
+    },
+    {
+      "table": "hospitals",
+      "rows": 33,
+      "columns": 6,
+      "memory_MB": 0.0
+    }
+  ],
+  "missing_cells": {
+    "admissions": 0,
+    "patients": 0,
+    "diagnoses": 0,
+    "billing": 0,
+    "hospitals": 0
+  },
+  "full_row_duplicates": {
+    "admissions": 0,
+    "patients": 0,
+    "diagnoses": 0,
+    "billing": 0,
+    "hospitals": 0
+  },
+  "key_uniqueness": {
+    "admissions.admission_id": true,
+    "patients.patient_id": true,
+    "hospitals.hospital_id": true,
+    "billing.bill_id": true,
+    "billing.admission_id": true,
+    "diagnoses.diag_id": true
+  },
+  "referential_integrity": {
+    "admissions.patient_id not in patients": 0,
+    "admissions.hospital_id not in hospitals": 0,
+    "billing.admission_id not in admissions": 0,
+    "admissions without a bill": 0,
+    "diagnoses.admission_id not in admissions": 0,
+    "admissions without any diagnosis": 0,
+    "admissions without a rank-1 diagnosis": 0,
+    "duplicate (admission_id, diag_rank) pairs": 0
+  },
+  "patients_with_repeat_admissions": 34978,
+  "validity_violations": {
+    "discharge before admission": 0,
+    "los_days != date difference": 0,
+    "los_days < 1": 0,
+    "negative num_procedures": 0,
+    "charlson outside 0-6": 0,
+    "systolic_bp outside 60-250": 0,
+    "haemoglobin outside 3-20": 0,
+    "creatinine outside 0.2-20": 0,
+    "hba1c outside 3-20": 0,
+    "readmitted_7d = 1 but readmitted_30d = 0": 0,
+    "age outside 0-120": 0,
+    "prev_admissions < 0": 0,
+    "billing: total != subsidy + out_of_pocket": 0,
+    "billing: negative amounts": 0
+  },
+  "outliers_IQR": [
+    {
+      "column": "los_days",
+      "min": 1,
+      "median": 5.0,
+      "max": 90,
+      "outside_IQR_rule": 5812,
+      "pct": 4.84
+    },
+    {
+      "column": "num_procedures",
+      "min": 0,
+      "median": 1.0,
+      "max": 15,
+      "outside_IQR_rule": 2640,
+      "pct": 2.2
+    },
+    {
+      "column": "charlson_index",
+      "min": 0,
+      "median": 2.0,
+      "max": 6,
+      "outside_IQR_rule": 0,
+      "pct": 0.0
+    },
+    {
+      "column": "hba1c",
+      "min": 4.0,
+      "median": 5.7,
+      "max": 14.3,
+      "outside_IQR_rule": 9179,
+      "pct": 7.65
+    },
+    {
+      "column": "creatinine",
+      "min": 0.4,
+      "median": 0.91,
+      "max": 15.0,
+      "outside_IQR_rule": 5925,
+      "pct": 4.94
+    },
+    {
+      "column": "haemoglobin",
+      "min": 4.0,
+      "median": 11.9,
+      "max": 18.0,
+      "outside_IQR_rule": 889,
+      "pct": 0.74
+    },
+    {
+      "column": "systolic_bp",
+      "min": 70,
+      "median": 134.0,
+      "max": 220,
+      "outside_IQR_rule": 772,
+      "pct": 0.64
+    }
+  ],
+  "target_all_admissions": {
+    "n": 120000,
+    "readmitted": 14210,
+    "rate": 0.11841666666666667
+  },
+  "readmission_by_discharge_type": {
+    "Expired": {
+      "n": 7413,
+      "readmitted": 0,
+      "rate": 0.0
+    },
+    "LAMA": {
+      "n": 15429,
+      "readmitted": 2747,
+      "rate": 0.178
+    },
+    "Recovered": {
+      "n": 87420,
+      "readmitted": 10302,
+      "rate": 0.1178
+    },
+    "Referred": {
+      "n": 9738,
+      "readmitted": 1161,
+      "rate": 0.1192
+    }
+  },
+  "after_cleaning": {
+    "rows": 112587,
+    "patients": 62923,
+    "readmitted": 14210,
+    "rate": 0.1262135059998046,
+    "dropped_expired": 7413,
+    "model_columns": 71,
+    "numeric_columns": 21,
+    "categorical_raw": 9
+  }
+}

@@ -1,0 +1,493 @@
+{
+  "quality": {
+    "admissions": {
+      "rows": 120000,
+      "cols": 17,
+      "missing": 0,
+      "duplicates": 0
+    },
+    "patients": {
+      "rows": 86400,
+      "cols": 8,
+      "missing": 0,
+      "duplicates": 0
+    },
+    "diagnoses": {
+      "rows": 271341,
+      "cols": 6,
+      "missing": 0,
+      "duplicates": 0
+    },
+    "billing": {
+      "rows": 120000,
+      "cols": 6,
+      "missing": 0,
+      "duplicates": 0
+    },
+    "hospitals": {
+      "rows": 33,
+      "cols": 6,
+      "missing": 0,
+      "duplicates": 0
+    }
+  },
+  "all_admissions": {
+    "n": 120000,
+    "positives": 14210,
+    "rate": 0.11841666666666667
+  },
+  "insurance_none_share_patients": 0.28605324074074073,
+  "dataset": {
+    "rows_raw": 120000,
+    "rows_used": 112587,
+    "dropped_expired": 7413,
+    "positives": 14210,
+    "rate": 0.1262135059998046,
+    "patients": 62923,
+    "n_features": 71,
+    "n_numeric": 21,
+    "n_categorical_raw": 9
+  },
+  "split": {
+    "train": {
+      "n": 78758,
+      "positives": 9873,
+      "rate": 0.12535869372000305
+    },
+    "val": {
+      "n": 16930,
+      "positives": 2184,
+      "rate": 0.12900177200236268
+    },
+    "test": {
+      "n": 16899,
+      "positives": 2153,
+      "rate": 0.12740398840168057
+    }
+  },
+  "models": {
+    "Logistic Regression": {
+      "accuracy": 0.8280963370613645,
+      "precision": 0.3600148920327625,
+      "recall": 0.44914073385973063,
+      "f1": 0.399669353172143,
+      "roc_auc": 0.7557546524460742,
+      "pr_auc": 0.372053785665846,
+      "threshold": 0.6597912501396602,
+      "tn": 13027,
+      "fp": 1719,
+      "fn": 1186,
+      "tp": 967,
+      "specificity": 0.8834260138342601,
+      "train_time_s": 1.5872926712036133,
+      "predict_time_s": 0.011514663696289062,
+      "val_roc_auc": 0.7537946591588256,
+      "brier": 0.20131673036098707,
+      "roc_auc_ci95": [
+        0.742986774457662,
+        0.7668784178017957
+      ]
+    },
+    "Random Forest": {
+      "accuracy": 0.8088052547488017,
+      "precision": 0.3257918552036199,
+      "recall": 0.46818392940083603,
+      "f1": 0.38421955403087477,
+      "roc_auc": 0.7483160114775865,
+      "pr_auc": 0.3504130672081543,
+      "threshold": 0.5660169513327395,
+      "tn": 12660,
+      "fp": 2086,
+      "fn": 1145,
+      "tp": 1008,
+      "specificity": 0.858537908585379,
+      "train_time_s": 32.11720252037048,
+      "predict_time_s": 0.3917388916015625,
+      "val_roc_auc": 0.7468485276195842,
+      "brier": 0.17567592253418934,
+      "roc_auc_ci95": [
+        0.7372838789149663,
+        0.7588713216693633
+      ]
+    },
+    "XGBoost": {
+      "accuracy": 0.8065566009823066,
+      "precision": 0.3269230769230769,
+      "recall": 0.4895494658615885,
+      "f1": 0.3920401710991259,
+      "roc_auc": 0.7517632687624075,
+      "pr_auc": 0.36500045520681096,
+      "threshold": 0.617368221282959,
+      "tn": 12576,
+      "fp": 2170,
+      "fn": 1099,
+      "tp": 1054,
+      "specificity": 0.8528414485284145,
+      "train_time_s": 5.363552808761597,
+      "predict_time_s": 0.022542715072631836,
+      "val_roc_auc": 0.7516410050232781,
+      "brier": 0.19905213990438958,
+      "roc_auc_ci95": [
+        0.7393387213780352,
+        0.7637064850159709
+      ]
+    },
+    "MLP (DL)": {
+      "accuracy": 0.8048996982069945,
+      "precision": 0.3272946859903382,
+      "recall": 0.5034835113794706,
+      "f1": 0.39670631290027447,
+      "roc_auc": 0.7541650474115994,
+      "pr_auc": 0.3685662507338655,
+      "threshold": 0.6324869990348816,
+      "tn": 12518,
+      "fp": 2228,
+      "fn": 1069,
+      "tp": 1084,
+      "specificity": 0.8489081784890817,
+      "train_time_s": 14.79078483581543,
+      "predict_time_s": 0.01276850700378418,
+      "val_roc_auc": 0.7533142408023731,
+      "epochs_run": 13,
+      "brier": 0.2054187562994075,
+      "roc_auc_ci95": [
+        0.7439500952710151,
+        0.7641986821131238
+      ]
+    },
+    "Prior-only baseline": {
+      "accuracy": 0.8725960115983195,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.12740398840168057,
+      "threshold": 0.5,
+      "tn": 14746,
+      "fp": 0,
+      "fn": 2153,
+      "tp": 0,
+      "specificity": 1.0,
+      "brier": 0.11117639537135988,
+      "train_time_s": 0.0,
+      "predict_time_s": 0.0
+    }
+  },
+  "best_model": "Logistic Regression",
+  "best_by_f1": "Logistic Regression",
+  "perm_importance_top": {
+    "los_days": 0.02831111130642668,
+    "comorbidity_count": 0.02712640041250643,
+    "ward_type": 0.02188596208534499,
+    "prev_admissions": 0.010099523039422484,
+    "insurance_type": 0.007432611251738293,
+    "diag_category": 0.0038729853200831035,
+    "age": 0.0031196776512132374,
+    "admit_type": 0.002703533453647674,
+    "discharge_type": 0.0025104152017999906,
+    "haemoglobin": 0.000673716581509054
+  },
+  "temporal": {
+    "test_year": 2024,
+    "n_test": 11187,
+    "roc_auc": 0.748918019024714
+  },
+  "corr_charlson": {
+    "comorbidity_count": 0.731274570482463,
+    "age": 0.7283783772999651
+  },
+  "audit": {
+    "A_deaths_excluded_grouped": {
+      "n_test": 16899,
+      "prevalence": 0.12740398840168057,
+      "roc_auc": 0.7557546524460742,
+      "pr_auc": 0.372053785665846,
+      "recall": 0.44914073385973063,
+      "precision": 0.3600148920327625,
+      "f1": 0.399669353172143,
+      "accuracy": 0.8280963370613645
+    },
+    "B_deaths_kept_grouped": {
+      "n_test": 17981,
+      "prevalence": 0.12040487180913186,
+      "roc_auc": 0.7752766514687965,
+      "pr_auc": 0.3745075705561317,
+      "recall": 0.5219399538106235,
+      "precision": 0.3236894872529361,
+      "f1": 0.39957567185289955,
+      "accuracy": 0.8111339747511261
+    },
+    "C_deaths_excluded_random": {
+      "n_test": 16889,
+      "prevalence": 0.1262360116051868,
+      "roc_auc": 0.7559241132233363,
+      "pr_auc": 0.3579445707302127,
+      "recall": 0.46763602251407127,
+      "precision": 0.31904,
+      "f1": 0.3793037854289519,
+      "accuracy": 0.8067973237018178
+    },
+    "D_deaths_kept_random": {
+      "n_test": 18000,
+      "prevalence": 0.11838888888888889,
+      "roc_auc": 0.7767206154306734,
+      "pr_auc": 0.3666691337811623,
+      "recall": 0.5049272641952135,
+      "precision": 0.327350167325829,
+      "f1": 0.39719453672942046,
+      "accuracy": 0.8185555555555556
+    }
+  },
+  "rates": {
+    "age_group": {
+      "0-17": {
+        "n": 15010,
+        "rate": 0.0658894070619587
+      },
+      "18-39": {
+        "n": 18330,
+        "rate": 0.061974904528096016
+      },
+      "40-59": {
+        "n": 43444,
+        "rate": 0.10689623423257527
+      },
+      "60-74": {
+        "n": 24995,
+        "rate": 0.1978395679135827
+      },
+      "75+": {
+        "n": 10808,
+        "rate": 0.230940044411547
+      }
+    },
+    "admit_type": {
+      "Elective": {
+        "n": 35445,
+        "rate": 0.08813654958386233
+      },
+      "Emergency": {
+        "n": 62568,
+        "rate": 0.1575725610535737
+      },
+      "OPD": {
+        "n": 14574,
+        "rate": 0.08419102511321531
+      }
+    },
+    "ward_type": {
+      "General": {
+        "n": 71804,
+        "rate": 0.08446604645980725
+      },
+      "HDU": {
+        "n": 14940,
+        "rate": 0.14170013386880856
+      },
+      "ICU": {
+        "n": 19743,
+        "rate": 0.25072177480626046
+      },
+      "NICU": {
+        "n": 6100,
+        "rate": 0.17672131147540984
+      }
+    },
+    "discharge_type": {
+      "LAMA": {
+        "n": 15429,
+        "rate": 0.17804135070322122
+      },
+      "Recovered": {
+        "n": 87420,
+        "rate": 0.1178448867536033
+      },
+      "Referred": {
+        "n": 9738,
+        "rate": 0.11922365988909427
+      }
+    },
+    "charlson_index": {
+      "0": {
+        "n": 28942,
+        "rate": 0.05984382558219888
+      },
+      "1": {
+        "n": 23169,
+        "rate": 0.08386205705900125
+      },
+      "2": {
+        "n": 21507,
+        "rate": 0.10963872227646812
+      },
+      "3": {
+        "n": 17529,
+        "rate": 0.1605910205944435
+      },
+      "4": {
+        "n": 13430,
+        "rate": 0.2291139240506329
+      },
+      "5": {
+        "n": 6330,
+        "rate": 0.2781990521327014
+      },
+      "6": {
+        "n": 1680,
+        "rate": 0.3119047619047619
+      }
+    },
+    "insurance_type": {
+      "Ayushman": {
+        "n": 34055,
+        "rate": 0.14820143884892087
+      },
+      "ESI": {
+        "n": 18624,
+        "rate": 0.12945661512027493
+      },
+      "None": {
+        "n": 31909,
+        "rate": 0.12432229151650005
+      },
+      "Private": {
+        "n": 27999,
+        "rate": 0.09946783813707633
+      }
+    }
+  },
+  "arch_info": {
+    "n_features": 71
+  },
+  "env": {
+    "python": "3.13.15",
+    "sklearn": "1.6.1",
+    "torch": "2.11.0+cpu",
+    "xgboost": "3.4.1",
+    "seed": 42
+  },
+  "features": [
+    "los_days",
+    "num_procedures",
+    "charlson_index",
+    "hba1c",
+    "creatinine",
+    "haemoglobin",
+    "systolic_bp",
+    "age",
+    "bpl_card",
+    "comorbidity_count",
+    "prev_admissions",
+    "beds",
+    "teaching",
+    "total_cost_inr",
+    "govt_subsidy_inr",
+    "out_of_pocket_inr",
+    "n_diagnoses",
+    "admit_year",
+    "admit_month",
+    "cost_per_day",
+    "oop_share",
+    "admit_type_Elective",
+    "admit_type_Emergency",
+    "admit_type_OPD",
+    "ward_type_General",
+    "ward_type_HDU",
+    "ward_type_ICU",
+    "ward_type_NICU",
+    "discharge_type_LAMA",
+    "discharge_type_Recovered",
+    "discharge_type_Referred",
+    "gender_F",
+    "gender_M",
+    "gender_Other",
+    "patient_state_Andhra Pradesh",
+    "patient_state_Bihar",
+    "patient_state_Gujarat",
+    "patient_state_Haryana",
+    "patient_state_Karnataka",
+    "patient_state_Kerala",
+    "patient_state_Madhya Pradesh",
+    "patient_state_Maharashtra",
+    "patient_state_Odisha",
+    "patient_state_Punjab",
+    "patient_state_Rajasthan",
+    "patient_state_Tamil Nadu",
+    "patient_state_Telangana",
+    "patient_state_Uttar Pradesh",
+    "patient_state_West Bengal",
+    "insurance_type_Ayushman",
+    "insurance_type_ESI",
+    "insurance_type_None",
+    "insurance_type_Private",
+    "hospital_tier_tier1",
+    "hospital_tier_tier2",
+    "hospital_tier_tier3",
+    "cost_category_Lab",
+    "cost_category_Pharmacy",
+    "cost_category_Procedure",
+    "cost_category_Room",
+    "diag_category_Cardiovascular",
+    "diag_category_Endocrine",
+    "diag_category_Gastrointestinal",
+    "diag_category_Genitourinary",
+    "diag_category_Infectious",
+    "diag_category_Injury",
+    "diag_category_Neoplasm",
+    "diag_category_Neurological",
+    "diag_category_Obstetric",
+    "diag_category_Perinatal",
+    "diag_category_Respiratory"
+  ],
+  "hyperparams": {
+    "Logistic Regression": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "max_iter": 2000,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs"
+    },
+    "Random Forest": {
+      "class_weight": "balanced_subsample",
+      "max_depth": 12,
+      "max_features": "sqrt",
+      "min_samples_leaf": 20,
+      "n_estimators": 300,
+      "random_state": 42
+    },
+    "XGBoost": {
+      "colsample_bytree": 0.8,
+      "early_stopping_rounds": 30,
+      "eval_metric": "auc",
+      "learning_rate": 0.05,
+      "max_depth": 5,
+      "n_estimators": 400,
+      "random_state": 42,
+      "scale_pos_weight": 6.977109287957054,
+      "subsample": 0.8,
+      "best_iteration": 71
+    },
+    "MLP (DL)": {
+      "hidden_layers": [
+        128,
+        64,
+        32
+      ],
+      "activation": "ReLU",
+      "dropout": 0.3,
+      "optimizer": "Adam",
+      "learning_rate": 0.001,
+      "batch_size": 512,
+      "max_epochs": 60,
+      "early_stopping_patience": 6,
+      "epochs_run": 13,
+      "loss": "BCE with logits, pos_weight = neg/pos",
+      "seed": 42
+    }
+  },
+  "colab": {
+    "in_colab": true,
+    "cpu_count": 2
+  }
+}
